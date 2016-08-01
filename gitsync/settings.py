@@ -90,7 +90,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gitsync.wsgi.application'
+WSGI_APPLICATION = 'onlinecoderbackend.wsgi.application'
 
 
 
