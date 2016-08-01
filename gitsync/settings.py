@@ -156,52 +156,21 @@ LOGGING = {
         }
     },
     'handlers': {
-        'git': {
+        'access': {
             'level': 'DEBUG',
             'formatter': 'json',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/git.log'),
+            'filename': os.path.join(BASE_DIR, 'logs/access.log'),
             'when': 'D',
             'interval': 1
-        },
-        'nginx': {
-            'level': 'INFO',
-            'formatter': 'json',
-            'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/nginx.log'),
-            'when': 'D',
-            'interval': 1
-        },
-        'uwsgi': {
-            'level': 'INFO',
-            'formatter': 'json',
-            'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/uwsgi.log'),
-            'when': 'D',
-            'interval': 1
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logutils.colorize.ColorizingStreamHandler',
-            'formatter': 'simple'
-        },
+        }
     },
     'loggers':  {
-        'git': {
-        'handlers': ['git','console'],
+        'access': {
+        'handlers': ['access','console'],
         'level': 'DEBUG',
         'propagate': False,
-        },
-        'nginx': {
-        'handlers': ['nginx','console'],
-        'level': 'DEBUG',
-        'propagate': False,
-        },
-        'uwsgi': {
-        'handlers': ['uwsgi','console'],
-        'level': 'DEBUG',
-        'propagate': False,
-        },
+        }
     }
 }
 
